@@ -1,15 +1,26 @@
-import tkinter
+import pygame
 
+pygame.init()
 
-def but_onoff(event, button):
-    if button == "Игрок А":
-        but["text"] = "Игрок Б"
-    else:
-        but["text"] = "Игрок А"
+W = 600
+H = 400
 
+sc = pygame.display.set_mode((W, H))
 
-root = tkinter.Tk()
-but = tkinter.Button(root, text="Игрок А", width=30, height=5, bg="grey50", fg="blue")
-but.pack(side=tkinter.RIGHT)
-but.bind("<Button-1>", lambda event: but_onoff(event, but["text"]))
-root.mainloop()
+FPS = 60
+clock = pygame.time.Clock()
+counter = 0
+while 1:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit()
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            if (counter % 2 == 0):
+                print("Игрок А")
+                counter += 1
+            else:
+                print("Игрок Б")
+                counter += 1
+
+    clock.tick(FPS)
+
