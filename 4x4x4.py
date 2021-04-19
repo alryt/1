@@ -4,7 +4,7 @@ import time
 
 pygame.init()
 FPS = 10
-screen = pygame.display.set_mode((180, 800))
+screen = pygame.display.set_mode((180, 600))
 
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
